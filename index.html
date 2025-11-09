@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шохан — Web-разработчик</title>
+<style>
+    :root {
+        --accent: #6c63ff;
+        --bg: #f9f9f9;
+        --text: #222;
+        --card: #fff;
+    }
+
+    [data-theme="dark"] {
+        --bg: #181818;
+        --text: #f1f1f1;
+        --card: #242424;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 10%;
+        background: var(--card);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        transition: background 0.3s;
+    }
+
+    header h1 {
+        font-size: 1.4rem;
+        color: var(--accent);
+    }
+
+    nav a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: var(--text);
+        font-weight: 500;
+        transition: color 0.2s;
+    }
+
+    nav a:hover {
+        color: var(--accent);
+    }
+
+    .switchers {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .switchers button {
+        background: var(--accent);
+        color: white;
+        border: none;
+        border-radius: 20px;
+        padding: 6px 12px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .switchers button:hover {
+        opacity: 0.8;
+    }
+
+    .hero {
+        padding: 100px 10%;
+        text-align: center;
+        background: linear-gradient(135deg, #6c63ff, #7b9fff);
+        color: white;
+        animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 25px;
+    }
+
+    .btn {
+        background: white;
+        color: var(--accent);
+        padding: 10px 25px;
+        border-radius: 25px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: var(--accent);
+        color: white;
+    }
+
+    section {
+        padding: 80px 10%;
+    }
+
+    h3.section-title {
+        text-align: center;
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+        color: var(--accent);
+    }
+
+    .about {
+        text-align: center;
+        max-width: 800px;
+        margin: auto;
+        font-size: 1.1rem;
+    }
+
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+
+    .project {
+        background: var(--card);
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        padding: 20px;
+        transition: transform 0.2s, background 0.3s;
+    }
+
+    .project:hover {
+        transform: translateY(-5px);
+    }
+
+    .project img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+    .contact {
+        text-align: center;
+    }
+
+    .contact a {
+        display: inline-block;
+        margin: 10px;
+        text-decoration: none;
+        color: white;
+        background: var(--accent);
+        padding: 12px 20px;
+        border-radius: 25px;
+        transition: background 0.2s;
+    }
+
+    .contact a:hover {
+        background: #5548ff;
+    }
+
+    footer {
+        background: #222;
+        color: #bbb;
+        text-align: center;
+        padding: 20px;
+        font-size: 0.9rem;
+    }
+
+    .contact-buttons { display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin: 40px 0; }
+    .btn.tg { background:#2ca6df; color:#fff; }
+    .btn.wa { background:#25D366; color:#fff; }
+    .btn.mail { background:#6c63ff; color:#fff; }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+</head>
+<body>
+
+    <header>
+        <h1>Шохан</h1>
+        <nav>
+            <a href="#about" data-lang="about">Обо мне</a>
+            <a href="#projects" data-lang="projects">Портфолио</a>
+            <a href="#contact" data-lang="contact">Контакты</a>
+        </nav>
+        <div class="switchers">
+            <button id="theme-toggle">🌙</button>
+            <button id="lang-toggle">KZ</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2 data-lang="heroTitle">Привет, я Шохан 👋</h2>
+        <p data-lang="heroDesc">Создаю сайты для компаний, кафе и стартапов. Качественно, быстро, с вниманием к деталям.</p>
+        <a href="#projects" class="btn" data-lang="btnProjects">Мои проекты</a>
+    </section>
+
+    <section id="about">
+        <h3 class="section-title" data-lang="aboutTitle">Обо мне</h3>
+        <p class="about" data-lang="aboutText">
+            Мне 16 лет, я из Казахстана и занимаюсь web-разработкой. Делаю сайты с нуля — от идеи до готового результата.
+            Использую HTML, CSS, JavaScript и Python, а также современные технологии.  
+        </p>
+    </section>
+
+    <section id="projects">
+        <h3 class="section-title" data-lang="portfolioTitle">Портфолио</h3>
+        <div class="projects">
+            <div class="project">
+                <img src="https://placehold.co/400x250?text=Сайт+1" alt="Сайт 1">
+                <h4>Сайт кафе “Delicious”</h4>
+                <p>Одностраничник с меню, отзывами и системой брони. Сделан с нуля на чистом HTML/CSS/JS.</p>
+            </div>
+            <div class="project">
+                <img src="https://placehold.co/400x250?text=Сайт+2" alt="Сайт 2">
+                <h4>Тойхана Altyn</h4>
+                <p>Современный корпоративный дизайн, адаптивная вёрстка, анимации при скролле.</p>
+            </div>
+            <div class="project">
+                <img src="https://placehold.co/400x250?text=Сайт+3" alt="Сайт 3">
+                <h4>Интернет-магазин “TechLine”</h4>
+                <p>Мини-витрина с каталогом, фильтрацией и корзиной на JavaScript.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="contact-buttons" id="contact">
+        <a class="btn tg" href="https://t.me/Shokhan100" target="_blank">Telegram</a>
+        <a class="btn wa" href="https://wa.me/77052730190?text=Привет%2C%20интересует%20сайт" target="_blank">WhatsApp</a>
+        <a class="btn mail" href="mailto:shohan@example.com?subject=Заказ%20сайта&body=Здравствуйте%2C%20Шохан!">Email</a>
+    </div>
+
+    <footer>© 2025 Шохан. Все права защищены.</footer>
+
+<script>
+    // 🌙 Переключатель темы
+    const body = document.body;
+    const themeBtn = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    body.dataset.theme = savedTheme;
+    themeBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+    themeBtn.onclick = () => {
+        const newTheme = body.dataset.theme === 'light' ? 'dark' : 'light';
+        body.dataset.theme = newTheme;
+        themeBtn.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        localStorage.setItem('theme', newTheme);
+    };
+
+    // 🌐 Переключатель языка
+    const langBtn = document.getElementById('lang-toggle');
+    const langs = {
+        ru: {
+            about: "Обо мне", projects: "Портфолио", contact: "Контакты",
+            heroTitle: "Привет, я Шохан 👋",
+            heroDesc: "Создаю сайты для компаний, кафе и стартапов. Качественно, быстро, с вниманием к деталям.",
+            btnProjects: "Мои проекты",
+            aboutTitle: "Обо мне",
+            aboutText: "Мне 16 лет, я из Казахстана и занимаюсь web-разработкой. Делаю сайты с нуля — от идеи до готового результата. Использую HTML, CSS, JavaScript, а также современные технологии.",
+            portfolioTitle: "Портфолио"
+        },
+        kz: {
+            about: "Мен туралы", projects: "Жобалар", contact: "Байланыс",
+            heroTitle: "Сәлем, мен Шохан 👋",
+            heroDesc: "Мен компаниялар, кафе және стартаптар үшін веб-сайттар жасаймын. Сапалы, жылдам және мұқият.",
+            btnProjects: "Менің жобаларым",
+            aboutTitle: "Мен туралы",
+            aboutText: "Мен 16 жастамын, Қазақстаннанмын. Веб-сайттарды нөлден бастап жасаймын — идеядан дайын нәтижеге дейін. HTML, CSS, JavaScript қолданамын.",
+            portfolioTitle: "Жобалар"
+        }
+    };
+
+    let currentLang = localStorage.getItem('lang') || 'ru';
+    applyLang(currentLang);
+
+    langBtn.textContent = currentLang === 'ru' ? 'KZ' : 'RU';
+    langBtn.onclick = () => {
+        currentLang = currentLang === 'ru' ? 'kz' : 'ru';
+        applyLang(currentLang);
+        langBtn.textContent = currentLang === 'ru' ? 'KZ' : 'RU';
+        localStorage.setItem('lang', currentLang);
+    };
+
+    function applyLang(lang) {
+        document.querySelectorAll('[data-lang]').forEach(el => {
+            const key = el.dataset.lang;
+            if (langs[lang][key]) el.textContent = langs[lang][key];
+        });
+    }
+
+    // Анимация при скролле
+    const elements = document.querySelectorAll('.project, .about');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => {
+        el.style.opacity = 0;
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = '0.6s ease-out';
+        observer.observe(el);
+    });
+</script>
+
+</body>
+</html>
