@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechLine Store</title>
+<style>
+body {
+  margin: 0; font-family: 'Segoe UI', sans-serif;
+  background: #f4f6fb; color: #222;
+}
+header {
+  background: #1e1e2f; color: white;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 10%;
+}
+nav a { color: #ccc; text-decoration: none; margin-left: 20px; transition: 0.3s; }
+nav a:hover { color: #6c63ff; }
+.hero {
+  background: linear-gradient(120deg, #6c63ff, #3f3dbb);
+  color: white; text-align: center; padding: 80px 10%;
+}
+.products {
+  padding: 80px 10%; display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 20px;
+}
+.product {
+  background: white; border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center; padding: 20px;
+  transition: 0.3s;
+}
+.product:hover { transform: translateY(-5px); }
+.product img { width: 100%; border-radius: 10px; margin-bottom: 15px; }
+.btn {
+  background: #6c63ff; color: white; padding: 10px 20px;
+  border-radius: 25px; text-decoration: none; display: inline-block;
+}
+.btn:hover { background: #4b45c4; }
+footer {
+  text-align: center; padding: 20px; background: #1e1e2f; color: #bbb;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>TechLine</h1>
+  <nav>
+    <a href="#">Главная</a>
+    <a href="#">Каталог</a>
+    <a href="#">Контакты</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Добро пожаловать в TechLine Store</h2>
+  <p>Современные гаджеты и техника по доступным ценам ⚡</p>
+</section>
+
+<section class="products">
+  <div class="product">
+    <img src="https://placehold.co/300x200?text=Смартфон" alt="">
+    <h4>Смартфон XNova</h4>
+    <p>Мощный, стильный и доступный.</p>
+    <a href="#" class="btn">В корзину</a>
+  </div>
+  <div class="product">
+    <img src="https://placehold.co/300x200?text=Наушники" alt="">
+    <h4>Беспроводные наушники</h4>
+    <p>Чистый звук и до 20 часов работы.</p>
+    <a href="#" class="btn">В корзину</a>
+  </div>
+  <div class="product">
+    <img src="https://placehold.co/300x200?text=Ноутбук" alt="">
+    <h4>Ноутбук Orion 15</h4>
+    <p>Для работы, игр и креатива.</p>
+    <a href="#" class="btn">В корзину</a>
+  </div>
+</section>
+
+<footer>© 2025 TechLine Store — создано Шоханом 💻</footer>
+</body>
+</html>

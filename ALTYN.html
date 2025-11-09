@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Тойхана Altyn</title>
+<style>
+body {
+  margin: 0; font-family: 'Georgia', serif;
+  background: #fff8f0; color: #3c2f2f;
+}
+header {
+  background: linear-gradient(90deg, #8b0000, #c19a6b);
+  color: white; padding: 20px 10%; display: flex;
+  justify-content: space-between; align-items: center;
+}
+nav a { color: #fff; margin-left: 20px; text-decoration: none; font-weight: 600; }
+nav a:hover { color: #ffd700; }
+.hero {
+  background: url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1350&q=80') center/cover;
+  color: white; text-align: center; padding: 100px 10%;
+}
+.hero h2 { font-size: 2.8rem; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+.hero p { font-size: 1.2rem; }
+.services { padding: 80px 10%; text-align: center; }
+.services h3 { color: #8b0000; margin-bottom: 40px; }
+.grid {
+  display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 20px;
+}
+.card {
+  background: white; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+footer {
+  background: #8b0000; color: white; text-align: center; padding: 20px;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Тойхана Altyn</h1>
+  <nav>
+    <a href="#">Басты бет</a>
+    <a href="#">Қызметтер</a>
+    <a href="#">Байланыс</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Сіздің мейрамыңыз — біздің жауапкершілігіміз 🎉</h2>
+  <p>Той, туған күн, мерейтой — бәрі жоғары деңгейде өтеді!</p>
+</section>
+
+<section class="services">
+  <h3>Қызметтер</h3>
+  <div class="grid">
+    <div class="card"><h4>Зал безендіру</h4><p>Сән мен әдемілік үйлескен дизайн.</p></div>
+    <div class="card"><h4>Музыка және жүргізуші</h4><p>Көңіл көтеретін атмосфера.</p></div>
+    <div class="card"><h4>Аспаздық мәзір</h4><p>Ұлттық және еуропалық тағамдар.</p></div>
+  </div>
+</section>
+
+<footer>© 2025 Тойхана Altyn</footer>
+</body>
+</html>
